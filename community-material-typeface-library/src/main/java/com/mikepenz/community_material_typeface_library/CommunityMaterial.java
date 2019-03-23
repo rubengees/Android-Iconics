@@ -24,37 +24,19 @@ import com.mikepenz.iconics.typeface.ITypeface;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.LinkedList;
 
 public class CommunityMaterial implements ITypeface {
     private static final String TTF_FILE = "community-material-font-v3.5.95.1.ttf";
     private static Typeface typeface = null;
-    private static HashMap<String, Character> mChars;
 
     @Override
     public IIcon getIcon(String key) {
-        try {
-            return Icon.valueOf(key);
-        } catch (Exception ex) {
-            // ignore error, if not in 1st set, it has to be in the second
-            return Icon2.valueOf(key);
-        }
+        throw new RuntimeException();
     }
 
     @Override
     public HashMap<String, Character> getCharacters() {
-        if (mChars == null) {
-            HashMap<String, Character> aChars = new HashMap<String, Character>();
-            for (Icon v : Icon.values()) {
-                aChars.put(v.name(), v.character);
-            }
-            for (Icon2 v : Icon2.values()) {
-                aChars.put(v.name(), v.character);
-            }
-            mChars = aChars;
-        }
-
-        return mChars;
+        throw new RuntimeException();
     }
 
     @Override
@@ -74,21 +56,12 @@ public class CommunityMaterial implements ITypeface {
 
     @Override
     public int getIconCount() {
-        return mChars.size();
+        throw new RuntimeException();
     }
 
     @Override
     public Collection<String> getIcons() {
-        Collection<String> icons = new LinkedList<String>();
-
-        for (Icon value : Icon.values()) {
-            icons.add(value.name());
-        }
-        for (Icon2 value : Icon2.values()) {
-            icons.add(value.name());
-        }
-
-        return icons;
+        throw new RuntimeException();
     }
 
     @Override
